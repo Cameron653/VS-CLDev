@@ -69,8 +69,8 @@ SUBSYSTEM_DEF(xenoarch)
 				if(T in processed_turfs) //The rock has already been processed...This shouldn't happen since farEnough above ensures digsites can't be next to each other. Presumably, this is a failsafe.
 					continue
 				viable_adjacent_turfs.Add(T) //Add to the list of rocks we can select for this site.
-
-			target_digsite_size = min(target_digsite_size, viable_adjacent_turfs.len) //Min((4-12),25) with base settings, effectively. How many spots will actually contain artifacts!
+			//Below determines how many artifacts containing tiles will actually spawn.
+			target_digsite_size = min(target_digsite_size, viable_adjacent_turfs.len) //Min((4-12),25) with base settings, if there are tiles all around the deposit. If there are less tiles around the deposit, it'll be smaller than the target_size.effectively.
 
 		for(var/i = 1 to target_digsite_size) //Go through all the selected turfs and let's start processing them!
 			turfs_to_process += pick_n_take(viable_adjacent_turfs)
