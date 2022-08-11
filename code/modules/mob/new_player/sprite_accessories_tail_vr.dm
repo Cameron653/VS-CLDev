@@ -149,6 +149,13 @@
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
 
+/datum/sprite_accessory/tail/rodent_large
+	name = "Thick rat tail, colorable"
+	desc = ""
+	icon_state = "largerodent"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
 /datum/sprite_accessory/tail/horse
 	name = "horse tail, colorable"
 	desc = ""
