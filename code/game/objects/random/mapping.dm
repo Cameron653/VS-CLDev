@@ -77,7 +77,6 @@
 				prob(3);/obj/machinery/vending/fitness,
 				prob(4);/obj/machinery/vending/cigarette,
 				prob(3);/obj/machinery/vending/giftvendor,
-				prob(1);/obj/machinery/vending/hotfood,
 				prob(5);/obj/machinery/vending/weeb,
 				prob(5);/obj/machinery/vending/sol,
 				prob(5);/obj/machinery/vending/snix,
@@ -97,7 +96,8 @@
 				/obj/machinery/vending/weeb,
 				/obj/machinery/vending/sol,
 				/obj/machinery/vending/snix,
-				/obj/machinery/vending/snlvend)
+				/obj/machinery/vending/snlvend,
+				/obj/machinery/vending/altevian)
 
 /obj/random/vendordrink //Random drink vendors for station use
 	name = "random drink vending machine"

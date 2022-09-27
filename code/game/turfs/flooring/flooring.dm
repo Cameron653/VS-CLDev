@@ -320,6 +320,26 @@ var/list/flooring_types
 	icon_base = "tealcarpet"
 	build_type = /obj/item/stack/tile/carpet/teal
 
+/decl/flooring/carpet/browncarpet
+	name = "brown carpet"
+	icon_base = "brncarpet"
+	build_type = /obj/item/stack/tile/carpet/brncarpet
+
+/decl/flooring/carpet/blucarpet2
+	name = "blue carpet"
+	icon_base = "blue1"
+	build_type = /obj/item/stack/tile/carpet/blucarpet2
+
+/decl/flooring/carpet/greencarpet
+	name = "green carpet"
+	icon_base = "green"
+	build_type = /obj/item/stack/tile/carpet/greencarpet
+
+/decl/flooring/carpet/purplecarpet
+	name = "purple carpet"
+	icon_base = "purple"
+	build_type = /obj/item/stack/tile/carpet/purplecarpet
+
 /decl/flooring/carpet/geo
 	name = "geometric carpet"
 	icon_base = "geocarpet"
@@ -584,3 +604,13 @@ var/list/flooring_types
 		'sound/effects/footstep/lava1.ogg',
 		'sound/effects/footstep/lava2.ogg',
 		'sound/effects/footstep/lava3.ogg'))
+
+/decl/flooring/concrete
+	name = "concrete"
+	desc = "A flat area of concrete flooring."
+	icon = 'icons/turf/concrete.dmi'
+	icon_base = "concrete"
+	is_plating = FALSE 	//VOREStation edit. It's a lot cooler if it's actual tile.
+	can_paint = 1		//VOREStation edit. Let's allow for some fun.
+	can_engrave = 1		//VOREStation edit. Fun.
+	flags = TURF_ACID_IMMUNE | TURF_CAN_BREAK | TURF_REMOVE_CROWBAR
