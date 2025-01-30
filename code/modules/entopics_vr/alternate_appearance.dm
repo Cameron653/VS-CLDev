@@ -69,6 +69,12 @@
 	var/list/viewing_alternate_appearances //the alternate appearances we're viewing, stored here to reestablish them after Logout()s
 	//these lists are built as necessary, so atoms aren't all lugging around empty lists
 
+	///Alt vis overlays managed by SSalt_appearances to allow having multiple alternate appearances that can be toggled at will.
+	var/list/alt_belly_overlays
+	var/list/alt_nsfw_overlays
+	//What alt overlays we have selected to see.
+	var/alt_overlay_selection = ALT_NORMAL
+
 /*
 	Builds an alternate_appearance datum for the supplied args, optionally displaying it straight away
 	key - the key to the assoc list of key = /datum/alternate_appearances
@@ -100,7 +106,6 @@
 	alternate_appearances[key] = AA
 	if(displayTo && displayTo.len)
 		display_alt_appearance(key, displayTo)
-
 
 //////////////
 // WRAPPERS //
@@ -145,5 +150,3 @@
 	if(!AA)
 		return
 	AA.hide(hideFrom)
-
-

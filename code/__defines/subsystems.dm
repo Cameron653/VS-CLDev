@@ -126,6 +126,7 @@ var/global/list/runlevel_flags = list(RUNLEVEL_LOBBY, RUNLEVEL_SETUP, RUNLEVEL_G
 #define INIT_ORDER_CHEMISTRY		35
 #define INIT_ORDER_ROBOT_SPRITES	34
 #define INIT_ORDER_VIS				32
+#define INIT_ORDER_ALT_APP			31
 #define INIT_ORDER_MAPPING			25
 #define INIT_ORDER_SOUNDS			23
 #define INIT_ORDER_INSTRUMENTS		22
@@ -160,39 +161,40 @@ var/global/list/runlevel_flags = list(RUNLEVEL_LOBBY, RUNLEVEL_SETUP, RUNLEVEL_G
 
 // Subsystem fire priority, from lowest to highest priority
 // If the subsystem isn't listed here it's either DEFAULT or PROCESS (if it's a processing subsystem child)
-#define FIRE_PRIORITY_PLAYERTIPS	5
-#define FIRE_PRIORITY_SHUTTLES		5
-#define FIRE_PRIORITY_SUPPLY		5
-#define FIRE_PRIORITY_NIGHTSHIFT	5
-#define FIRE_PRIORITY_PLANTS		5
-#define FIRE_PRIORITY_VIS			5
-#define FIRE_PRIORITY_ORBIT			7
-#define FIRE_PRIORITY_VOTE			8
-#define FIRE_PRIORITY_INSTRUMENTS	9
-#define FIRE_PRIORITY_PING			10
-#define FIRE_PRIORITY_SERVER_MAINT	10
-#define FIRE_PRIORITY_AI			10
-#define FIRE_PRIORITY_GARBAGE		15
-#define FIRE_PRIORITY_ASSETS 		20
-#define FIRE_PRIORITY_ALARM			20
-#define FIRE_PRIORITY_CHARSETUP     25
-#define FIRE_PRIORITY_AIRFLOW		30
-#define FIRE_PRIORITY_AIR			35
-#define FIRE_PRIORITY_OBJ			40
-#define FIRE_PRIORITY_PROCESS		45
-#define FIRE_PRIORITY_DEFAULT		50
-#define FIRE_PRIORITY_TICKER		60
-#define FIRE_PRIORITY_PLANETS		75
-#define FIRE_PRIORITY_MACHINES		100
-#define FIRE_PRIORITY_TGUI			110
-#define FIRE_PRIORITY_PROJECTILES	150
-#define FIRE_PRIORITY_STATPANEL		390
-#define FIRE_PRIORITY_CHAT			400
-#define FIRE_PRIORITY_OVERLAYS		500
-#define FIRE_PRIORITY_TIMER			700
-#define FIRE_PRIORITY_SPEECH_CONTROLLER 900
-#define FIRE_PRIORITY_DELAYED_VERBS 950
-#define FIRE_PRIORITY_INPUT			1000 // This must always always be the max highest priority. Player input must never be lost.
+#define FIRE_PRIORITY_PLAYERTIPS		5
+#define FIRE_PRIORITY_SHUTTLES			5
+#define FIRE_PRIORITY_SUPPLY			5
+#define FIRE_PRIORITY_NIGHTSHIFT		5
+#define FIRE_PRIORITY_PLANTS			5
+#define FIRE_PRIORITY_VIS				5
+#define FIRE_PRIORITY_ALT_APPEARANCE	5
+#define FIRE_PRIORITY_ORBIT				7
+#define FIRE_PRIORITY_VOTE				8
+#define FIRE_PRIORITY_INSTRUMENTS		9
+#define FIRE_PRIORITY_PING				10
+#define FIRE_PRIORITY_SERVER_MAINT		10
+#define FIRE_PRIORITY_AI				10
+#define FIRE_PRIORITY_GARBAGE			15
+#define FIRE_PRIORITY_ASSETS 			20
+#define FIRE_PRIORITY_ALARM				20
+#define FIRE_PRIORITY_CHARSETUP			25
+#define FIRE_PRIORITY_AIRFLOW			30
+#define FIRE_PRIORITY_AIR				35
+#define FIRE_PRIORITY_OBJ				40
+#define FIRE_PRIORITY_PROCESS			45
+#define FIRE_PRIORITY_DEFAULT			50
+#define FIRE_PRIORITY_TICKER			60
+#define FIRE_PRIORITY_PLANETS			75
+#define FIRE_PRIORITY_MACHINES			100
+#define FIRE_PRIORITY_TGUI				110
+#define FIRE_PRIORITY_PROJECTILES		150
+#define FIRE_PRIORITY_STATPANEL			390
+#define FIRE_PRIORITY_CHAT				400
+#define FIRE_PRIORITY_OVERLAYS			500
+#define FIRE_PRIORITY_TIMER				700
+#define FIRE_PRIORITY_SPEECH_CONTROLLER	900
+#define FIRE_PRIORITY_DELAYED_VERBS		950
+#define FIRE_PRIORITY_INPUT				1000 // This must always always be the max highest priority. Player input must never be lost.
 
 /**
 	Create a new timer and add it to the queue.
@@ -206,3 +208,9 @@ var/global/list/runlevel_flags = list(RUNLEVEL_LOBBY, RUNLEVEL_SETUP, RUNLEVEL_G
 
 /// The timer key used to know how long subsystem initialization takes
 #define SS_INIT_TIMER_KEY "ss_init"
+
+/// The defines used by SSalt_appearances. The alt_overlay_selection is set to one of these.
+#define ALT_NONE	1 //We will see no overlays of any sort.
+#define ALT_NORMAL	2 //We will see stomach overlays, but nothing extreme.
+#define ALT_NSFW	3 //We will see 'nsfw' overlays, but no stomachs.
+#define ALT_ALL		4 //We will see all overlays.
